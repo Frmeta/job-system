@@ -45,8 +45,14 @@ func _ready():
 	
 func load_csv():
 	# read csv as string
-	var file = FileAccess.open("res://resources/class.csv", FileAccess.READ)
+	const file_path = "res://resources/class.csv"
+	if not FileAccess.file_exists(file_path):
+		assert(false, "file not found")
+		return
+	
+	var file = FileAccess.open(file_path, FileAccess.READ)
 	var content = file.get_as_text()
+	file.close()
 	return content
 	
 func option_button_updated(idx:int):

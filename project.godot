@@ -10,7 +10,14 @@ config_version=5
 
 [application]
 
-config/name="intern"
+config/name="job system"
 run/main_scene="res://scenes/job_system.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[importer_defaults]
+
+csv_translation={
+"compress": true,
+"delimiter": 0
+}
